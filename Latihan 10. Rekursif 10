@@ -1,0 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package latihanrekursif;
+
+/**
+ *
+ * @author User
+ */
+public class Rekursif10 {
+    public static boolean godlike(int p, int q){
+        if (q == 0) return (p == 1);
+        return godlike(q,p% q);
+    }
+    public static void main(String[] args) {
+        System.out.println(godlike(1, 0));
+    }
+    
+}
