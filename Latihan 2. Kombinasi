@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package latihanrekursif;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author User
+ */
+public class Kombinasi {
+     static void abc(String str, char[] data, int last, int index){
+        int length = str.length();
+        
+        for (int i = 0; i < length; i++) {
+            data[index] = str.charAt(i);
+            if (index == last){
+                System.out.println(new String(data) + "" );
+            }else{
+                abc(str, data, last, index +1);
+            }    
+        }
+    }
+    
+    static void abc(String str){
+        int length = str.length();
+        
+        char[] data = new char[length +1];
+        char[] temp = str.toCharArray();
+        
+        Arrays.sort(temp);
+        str = new String(temp);
+        
+        abc(str, data, length - 1, 0);
+    }
+    public static void main(String[] args) {
+        String str = "ABC";
+        System.out.printf("All permutation with" 
+                + "repetition of %s are: \n",str);
+        abc(str);
+    }
+}
